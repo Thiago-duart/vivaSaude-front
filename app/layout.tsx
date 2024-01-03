@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./style/globals.css";
 import ThemeProvider from "./interface/components/hooks/useTheme";
+import { DefaultLayout } from "./interface/components/DefaultLayout/DefaultLayout";
 
 export const metadata: Metadata = {
   title: "Viva Saude",
@@ -14,7 +15,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" id="container">
-      <ThemeProvider>{children}</ThemeProvider>
+      <ThemeProvider>
+        <DefaultLayout>{children}</DefaultLayout>
+      </ThemeProvider>
     </html>
   );
 }

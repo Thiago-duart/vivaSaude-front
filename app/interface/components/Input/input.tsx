@@ -1,9 +1,9 @@
 interface IInput {
   label: string;
   name: string;
-  // error: any;
+  error: any;
 }
-export function Input({ label, name }: IInput) {
+export function Input({ label, name, error }: IInput) {
   return (
     <>
       <div className="flex flex-col gap-2">
@@ -11,13 +11,15 @@ export function Input({ label, name }: IInput) {
           {label}
         </label>
         <input
-          className="border border-black rounded-md outline-none px-3 py-2 font-normal text-[12px] focus:border-green-600 dark:text-white dark:bg-black dark:border-gayBoder"
+          className="border border-black rounded-md outline-none px-3 py-2 font-normal text-[12px] focus:border-green-600 dark:focus:border-green-600 dark:text-white bg-slate-100 dark:bg-black dark:border-gayBoder"
           type="text"
           name={name}
           id={name}
           required
         />
-        {/* <p>{error}</p> */}
+        <p className=" text-[12px] text-red-700">
+          {error && error?.[name]?.[0]}
+        </p>
       </div>
     </>
   );

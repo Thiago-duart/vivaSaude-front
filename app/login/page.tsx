@@ -8,8 +8,7 @@ export default function Login() {
 
   return (
     <>
-      <Header />
-      <section className="flex flex-col items-center  py-10 dark:bg-grayBackground h-screen">
+      <div className="flex flex-col items-center  py-10 dark:bg-grayBackground h-screen">
         <h1 className="dark:text-white text-[1.6rem]">Login</h1>
         <form action={formAction} className=" flex flex-col w-80 gap-2">
           <Input label="Email" name="email" error={state?.fieldErrors} />
@@ -20,7 +19,7 @@ export default function Login() {
           />
           <Button>Login</Button>
         </form>
-      </section>
+      </div>
     </>
   );
 }

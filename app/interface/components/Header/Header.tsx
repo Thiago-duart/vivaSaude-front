@@ -1,10 +1,8 @@
 "use client";
-import { ChefHat, Moon, Sun } from "lucide-react";
-import { useContext } from "react";
-import { ThemeContext } from "../..";
+import { ChefHat } from "lucide-react";
+import { ChangeTheme } from "../..";
 
 export function Header() {
-  const { useTheme, theme, setTheme } = useContext(ThemeContext);
   return (
     <>
       <header className="flex items-center  h-16 px-8 bg-ligthHeader dark:bg-darkHeader text-white text-[0.75rem]">
@@ -22,24 +20,7 @@ export function Header() {
             </div>
           </div>
           <div className="flex gap-6 items-center">
-            <div>
-              {theme == "dark" ? (
-                <Sun
-                  size={18}
-                  onClick={() => {
-                    useTheme(), setTheme("light");
-                  }}
-                />
-              ) : (
-                <Moon
-                  color="white"
-                  size={18}
-                  onClick={() => {
-                    useTheme(), setTheme("dark");
-                  }}
-                />
-              )}
-            </div>
+            <ChangeTheme />
             <div>
               <p>Login</p>
             </div>

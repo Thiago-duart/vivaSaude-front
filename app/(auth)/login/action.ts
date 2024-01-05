@@ -1,4 +1,4 @@
-import { useParse } from "../interface/components/hooks/useParse";
+import { useParse } from "@/app/interface/components/hooks/useParse";
 import { loginSchema } from "./schema/login-schema";
 
 export async function actionLogin(previousState: any, formData: FormData) {

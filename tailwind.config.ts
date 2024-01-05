@@ -9,9 +9,10 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        grayHeader: "rgb(36, 41, 47)",
+        ligthHeader: "rgb(36, 41, 47)",
+        darkHeader: "#161b22",
         grayBackground: "#0d1117",
-        gayBoder: "#30363d",
+        grayBoder: "#30363d",
       },
     },
   },

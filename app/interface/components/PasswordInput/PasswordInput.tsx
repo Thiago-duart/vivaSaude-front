@@ -22,7 +22,7 @@ export function PasswordInput({ label, name, error }: IInput) {
           {label}
         </label>
         <div
-          className={`flex  justify-between items-center rounded-md px-2 border border-black  bg-slate-100 dark:bg-black dark:border-gayBoder ${border?.light} ${border?.dark}`}
+          className={`flex  justify-between items-center rounded-md px-2 border border-black  bg-slate-100 dark:bg-black dark:border-grayBoder ${border?.light} ${border?.dark}`}
         >
           <input
             className="outline-none py-2  px-1 font-normal text-[12px]   dark:text-white bg-slate-100 dark:bg-black  w-full"

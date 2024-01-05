@@ -7,7 +7,7 @@ export function Header() {
   const { useTheme, theme, setTheme } = useContext(ThemeContext);
   return (
     <>
-      <header className="flex items-center  h-16 px-8 bg-grayHeader text-white text-[0.75rem]">
+      <header className="flex items-center  h-16 px-8 bg-ligthHeader dark:bg-darkHeader text-white text-[0.75rem]">
         <nav className="flex  justify-between w-full cursor-pointer">
           <div className="flex gap-6 items-center">
             <div className="flex items-center gap-2">

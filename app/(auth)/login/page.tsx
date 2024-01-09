@@ -2,7 +2,13 @@
 // @ts-expect-error
 import { useFormState } from "react-dom";
 import { actionLogin } from "./action";
-import { Button, Input, PasswordInput } from "@/app/interface";
+import {
+  Button,
+  FormAction,
+  Input,
+  MyLink,
+  PasswordInput,
+} from "@/app/interface";
 export default function Login() {
   const [state, formAction] = useFormState(actionLogin, 0);
 
@@ -10,15 +16,34 @@ export default function Login() {
     <>
       <div className="flex flex-col items-center  py-10 dark:bg-grayBackground h-screen">
         <h1 className="dark:text-white text-[1.6rem]">Login</h1>
-        <form action={formAction} className=" flex flex-col w-80 gap-2">
-          <Input label="Email" name="email" error={state?.fieldErrors} />
+        <FormAction actionfn={formAction}>
+          <Input
+            label="Email"
+            name="email"
+            error={state?.fieldErrors}
+            type="text"
+          />
           <PasswordInput
             label="Senha"
             name="password"
             error={state?.fieldErrors}
           />
           <Button>Login</Button>
-        </form>
+        </FormAction>
+        <div className="flex flex-col gap-2 justify-center mt-8 dark:text-white  text-sm font-normal items-center">
+          <div className="flex gap-2">
+            <p>Ainda não possui conta?</p>
+            <MyLink href="./singup">
+              <p className="text-blue-600">Cadastre-se aqui</p>
+            </MyLink>
+          </div>
+          <div className="flex gap-2">
+            <p>Esqueceu sua senha?</p>
+            <MyLink href="https://www.youtube.com/">
+              <p className="text-blue-600">Click aqui.</p>
+            </MyLink>
+          </div>
+        </div>
       </div>
     </>
   );

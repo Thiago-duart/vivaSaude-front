@@ -7,3 +7,15 @@ html {
   font-weight: 500;
   -webkit-font-smoothing: antialiased
 }
+
+
+
+
+::-webkit-scrollbar {
+  background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  border: 1px solid green;
+  background-color: #161b22;
+}

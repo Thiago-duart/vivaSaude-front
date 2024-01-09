@@ -9,9 +9,7 @@ export default function HomeLayout({
     <>
       <div className="flex h-screen ">
         <Aside />
-        <section className="w-full dark:bg-grayBackground dark:text-white 2xl:h-screen p-12">
-          {children}
-        </section>
+        <section className="w-full 2xl:h-screen p-12">{children}</section>
       </div>
     </>
   );

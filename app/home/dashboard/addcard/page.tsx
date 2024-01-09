@@ -4,11 +4,10 @@ import { useFormState } from "react-dom";
 import { actionCard } from "./action";
 import { Button, FormAction, Input, InputArea } from "@/app/interface";
 import { useState } from "react";
-import { Plus, PlusCircle, Trash } from "lucide-react";
+import { PlusCircle, Trash } from "lucide-react";
+
 export default function AddCard() {
   const [state, formAction] = useFormState(actionCard, 0);
-  console.log(state);
-
   return (
     <>
       <div className="h-full  overflow-y-auto flex justify-center  ">
@@ -90,7 +89,7 @@ function WeeksSelect({ name, label }: IWeekSelect) {
   return (
     <>
       <div className="flex flex-col gap-2">
-        <label htmlFor={name} className=" font-normal text-sm dark:text-white">
+        <label htmlFor={name} className=" font-normal text-sm">
           {label}
         </label>
         <select

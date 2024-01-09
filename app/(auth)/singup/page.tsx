@@ -2,7 +2,7 @@
 // @ts-expect-error
 import { useFormState } from "react-dom";
 import { actionSingUp } from "./action";
-import { Button, Input, PasswordInput } from "@/app/interface";
+import { Button, FormAction, Input, PasswordInput } from "@/app/interface";
 export default function SingUp() {
   const [state, formAction] = useFormState(actionSingUp, 0);
 
@@ -10,20 +10,26 @@ export default function SingUp() {
     <>
       <div className="flex flex-col items-center  py-10 dark:bg-grayBackground h-screen">
         <h1 className="dark:text-white text-[1.6rem]">Cadastro</h1>
-        <form action={formAction} className=" flex flex-col w-80 gap-2">
+        <FormAction actionfn={formAction}>
           <Input
             label="Nome de usuário"
             name="name"
             error={state?.fieldErrors}
+            type="text"
           />
-          <Input label="Email" name="email" error={state?.fieldErrors} />
+          <Input
+            label="Email"
+            name="email"
+            error={state?.fieldErrors}
+            type="text"
+          />
           <PasswordInput
             label="Senha"
             name="password"
             error={state?.fieldErrors}
           />
           <Button>Cadastrar</Button>
-        </form>
+        </FormAction>
       </div>
     </>
   );

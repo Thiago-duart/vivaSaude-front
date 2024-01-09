@@ -2,8 +2,9 @@ interface IInput {
   label: string;
   name: string;
   error: any;
+  type: string;
 }
-export function Input({ label, name, error }: IInput) {
+export function Input({ label, name, error, type }: IInput) {
   return (
     <>
       <div className="flex flex-col gap-2">
@@ -11,8 +12,8 @@ export function Input({ label, name, error }: IInput) {
           {label}
         </label>
         <input
-          className="border border-black rounded-md outline-none px-3 py-2 font-normal text-[12px] focus:border-green-600 dark:focus:border-green-600 dark:text-white bg-slate-100 dark:bg-black dark:border-grayBoder"
-          type="text"
+          className="border border-black rounded-md outline-none px-3 py-[0.875rem]  font-normal text-[12px] focus:border-green-600 dark:focus:border-green-600 dark:text-white bg-slate-100 dark:bg-black dark:border-grayBoder"
+          type={type}
           name={name}
           id={name}
           required

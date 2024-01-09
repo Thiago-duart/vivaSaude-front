@@ -25,7 +25,7 @@ export function PasswordInput({ label, name, error }: IInput) {
           className={`flex  justify-between items-center rounded-md px-2 border border-black  bg-slate-100 dark:bg-black dark:border-grayBoder ${border?.light} ${border?.dark}`}
         >
           <input
-            className="outline-none py-2  px-1 font-normal text-[12px]   dark:text-white bg-slate-100 dark:bg-black  w-full"
+            className="outline-none py-[0.875rem]  px-1 font-normal text-[12px]   dark:text-white bg-slate-100 dark:bg-black  w-full"
             type={visible ? "text" : "password"}
             name={name}
             id={name}
@@ -46,13 +46,13 @@ export function PasswordInput({ label, name, error }: IInput) {
           {visible ? (
             <EyeOff
               className="text-black dark:bg-black dark:text-white cursor-pointer"
-              size={12}
+              size={18}
               onClick={() => setVisible(false)}
             />
           ) : (
             <Eye
               className="text-black dark:bg-black dark:text-white cursor-pointer"
-              size={12}
+              size={18}
               onClick={() => setVisible(true)}
             />
           )}

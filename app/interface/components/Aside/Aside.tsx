@@ -10,18 +10,47 @@ import {
   Sun,
 } from "lucide-react";
 import { useContext, useState } from "react";
-import { ThemeContext } from "../..";
-
+import { MyLink, ThemeContext } from "../..";
+const links = [
+  { icon: Soup, name: "Alimentação-Dia-Dia", href: "/home/food" },
+  { icon: Edit, name: "Adicionar-Editar", href: "/home/dashboard" },
+  { icon: ShoppingCart, name: "Compras-Semanais", href: "/home/shopping" },
+];
+export function Aside() {
+  return (
+    <>
+      <div className="w-80 py-5 px-7 bg-ligthHeader dark:bg-darkHeader flex flex-col gap-16">
+        <div className="flex items-center gap-2 text-white  cursor-pointer">
+          <ChefHat color="white" size={36} />
+          <p className="text-lg text-lime-600">Thiago</p>
+        </div>
+        <div>
+          <nav className="flex flex-col gap-10">
+            {links.map((keys) => (
+              <MyLink href={keys.href}>
+                <div className="flex items-center  gap-2 text-white  cursor-pointer">
+                  <keys.icon color="white" size={"2rem"} />
+                  <p className="text-md">{keys.name}</p>
+                </div>
+              </MyLink>
+            ))}
+            <Settings />
+          </nav>
+        </div>
+      </div>
+    </>
+  );
+}
 function Settings() {
   const { useTheme, theme, setTheme } = useContext(ThemeContext);
   const active = theme == "dark" ? true : false;
 
   const [open, setOpen] = useState("hidden");
-  // if (open === "") {
-  //   setTimeout(() => {
-  //     setOpen("hidden");
-  //   }, 2000);
-  // }
+  if (open === "") {
+    setTimeout(() => {
+      setOpen("hidden");
+    }, 2000);
+  }
   function visible() {
     if (open === "hidden") {
       setOpen("");
@@ -37,7 +66,7 @@ function Settings() {
           onClick={() => visible()}
         >
           <SettingsIcon color="white" size={"2rem"} />
-          <p className="text-lg">Configurações</p>
+          <p className="text-md">Configurações</p>
         </div>
         <div
           className={`w-44 bg-white  ${open} absolute  right-0 rounded-lg p-3`}
@@ -72,35 +101,6 @@ function Settings() {
               <p>Deslogar</p>
             </div>
           </div>
-        </div>
-      </div>
-    </>
-  );
-}
-export function Aside() {
-  return (
-    <>
-      <div className="h-screen w-80 py-5 px-7 bg-ligthHeader dark:bg-darkHeader flex flex-col gap-16">
-        <div className="flex items-center gap-2 text-white  cursor-pointer">
-          <ChefHat color="white" size={36} />
-          <p className="text-lg text-lime-600">Thiago</p>
-        </div>
-        <div>
-          <nav className="flex flex-col gap-10">
-            <div className="flex items-center gap-2 text-white  cursor-pointer">
-              <Soup color="white" size={"2rem"} />
-              <p className="text-lg">Alimentação-Dia-Dia</p>
-            </div>
-            <div className="flex items-center gap-2 text-white  cursor-pointer">
-              <Edit color="white" size={"2rem"} />
-              <p className="text-lg">Adicionar-Editar</p>
-            </div>
-            <div className="flex items-center gap-2 text-white  cursor-pointer">
-              <ShoppingCart color="white" size={"2rem"} />
-              <p className="text-lg">Compras-Semanais</p>
-            </div>
-            <Settings />
-          </nav>
         </div>
       </div>
     </>

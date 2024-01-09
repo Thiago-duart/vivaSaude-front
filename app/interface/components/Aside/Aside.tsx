@@ -12,9 +12,19 @@ import {
 import { useContext, useState } from "react";
 import { MyLink, ThemeContext } from "../..";
 const links = [
-  { icon: Soup, name: "Alimentação-Dia-Dia", href: "/home/food" },
-  { icon: Edit, name: "Adicionar-Editar", href: "/home/dashboard" },
-  { icon: ShoppingCart, name: "Compras-Semanais", href: "/home/shopping" },
+  { icon: Soup, name: "Alimentação-Dia-Dia", href: "/home/food", key: "food" },
+  {
+    icon: Edit,
+    name: "Adicionar-Editar",
+    href: "/home/dashboard",
+    key: "edit",
+  },
+  {
+    icon: ShoppingCart,
+    name: "Compras-Semanais",
+    href: "/home/shopping",
+    key: "shoping",
+  },
 ];
 export function Aside() {
   return (
@@ -27,7 +37,7 @@ export function Aside() {
         <div>
           <nav className="flex flex-col gap-10">
             {links.map((keys) => (
-              <MyLink href={keys.href}>
+              <MyLink key={keys.key} href={keys.href}>
                 <div className="flex items-center  gap-2 text-white  cursor-pointer">
                   <keys.icon color="white" size={"2rem"} />
                   <p className="text-md">{keys.name}</p>

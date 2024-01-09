@@ -11,6 +11,7 @@ export { Card, HandleCard } from "./components/Card/Card";
 export { FormAction } from "./components/FormAction/FormAction";
 export { MyLink } from "./components/Link/Link";
 export { InputArea } from "./components/InputArea/InputArea";
+export { AnimationPing } from "./components/AnimationPing/AnimationPing";
 //hooks
 export * from "./components/hooks/useTheme";
 

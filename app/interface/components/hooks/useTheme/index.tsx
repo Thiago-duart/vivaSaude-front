@@ -55,7 +55,7 @@ export default function ThemeProvider({
   }, [themeActive]);
   return (
     <ThemeContext.Provider value={{ useTheme, theme, setTheme }}>
-      <body>{children}</body>
+      <body className="dark:text-white dark:bg-grayBackground">{children}</body>
     </ThemeContext.Provider>
   );
 }

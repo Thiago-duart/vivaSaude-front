@@ -8,8 +8,8 @@ export default function SingUp() {
 
   return (
     <>
-      <div className="flex flex-col items-center  py-10 dark:bg-grayBackground h-screen">
-        <h1 className="dark:text-white text-[1.6rem]">Cadastro</h1>
+      <div className="flex flex-col items-center  py-10 h-screen">
+        <h1 className="text-[1.6rem]">Cadastro</h1>
         <FormAction actionfn={formAction}>
           <Input
             label="Nome de usuário"
